@@ -1,9 +1,8 @@
 import dotenv from 'dotenv';
 dotenv.config(); // Loads environment variables from the .env file
-console.log('MongoDB URL:', process.env.MONGODB_URL);
 
 import express from "express";
-import { PORT, mongoDBURL } from "./config.js";
+//import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import booksRoute from "./routes/booksRoute.js";
 import cors from "cors";
@@ -28,10 +27,10 @@ app.get('/', (request, response) =>{
 //Basically defining the routes and saying to use that prefix for the all routes in booksRoute
 app.use('/books', booksRoute);
 
-mongoose.connect(mongoDBURL).then(() => {
+mongoose.connect(process.env.MONGODB_URL).then(() => {
     console.log('App Connected to Database');
-    app.listen(PORT, ()=> {
-        console.log(`App is listening to port: ${PORT}`);
+    app.listen(process.env.PORT, ()=> {
+        console.log(`App is listening to port: ${process.env.PORT}`);
     });
 }).catch((error) => {
     console.log(error);
