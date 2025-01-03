@@ -18,7 +18,7 @@ const BookSingleCard = ({ book }) => {
       </h2>
       <h4 className="my-2 text-gray-500"> id: {book._id}</h4>
       <div className="flex justify-start items-center gap-x-2">
-        <PiBookOpenTextLight className="text-red-300 text-2xl" />
+        <PiBookOpenTextLight className="text-red-300 text-2xl flex-shrink-0" />
         <h2 className="my-1">{book.title}</h2>
       </div>
       <div className="flex justify-start items-center gap-x-2">
