@@ -1,16 +1,13 @@
 import express from "express";
-//import { PORT, mongoDBURL } from "./config.js";
+import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import booksRoute from "./routes/booksRoute.js";
 import cors from "cors";
-import dotenv from "dotenv";
 
-dotenv.config();
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
-const mongoDBURL = process.env.MONGO_URI;
+
 
 
 //allows the app to send and recieve data in json format
