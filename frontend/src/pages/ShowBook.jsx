@@ -8,11 +8,12 @@ const ShowBooks = () => {
   const [book, setBook] = useState({});
   const [loading, setLoading] = useState(false);
   const {id} = useParams();
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`${backendUrl}/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);

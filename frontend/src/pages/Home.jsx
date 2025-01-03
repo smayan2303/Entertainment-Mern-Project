@@ -13,7 +13,7 @@ const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showType, setShowType] = useState('table');
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
 
@@ -24,7 +24,7 @@ const Home = () => {
 
     setLoading(true);
     axios
-      .get('http://localhost:5555/books')
+      .get(`${backendUrl}/books`)
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
