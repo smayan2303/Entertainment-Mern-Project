@@ -22,7 +22,7 @@ const BookSingleCard = ({ book }) => {
         <h2 className="my-1">{book.title}</h2>
       </div>
       <div className="flex justify-start items-center gap-x-2">
-        <BiUserCircle className="text-red-300 text-2xl" />
+        <BiUserCircle className="text-red-300 text-2xl flex-shrink-0" />
         <h2 className="my-1">{book.author}</h2>
       </div>
 
