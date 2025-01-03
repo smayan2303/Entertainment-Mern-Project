@@ -27,7 +27,7 @@ const ShowBooks = () => {
   return (
     <div className='p-4'>
       <BackButton />
-      <h1 className='text-3xl my-4 text-center'>Show Book</h1>
+      <h1 className='text-3xl my-4 text-center'>Movie/TV Show Details</h1>
       {loading ? (
         <div className='flex justify-center items-center'><Spinner /></div>
       ) : (
@@ -41,11 +41,11 @@ const ShowBooks = () => {
             <span>{book.title}</span>
           </div>
           <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-500'>Author</span>
+            <span className='text-xl mr-4 text-gray-500'>Actors</span>
             <span>{book.author}</span>
           </div>
           <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-500'>Publish Year</span>
+            <span className='text-xl mr-4 text-gray-500'>Release Year</span>
             <span>{book.publishYear}</span>
           </div>
           <div className='my-4'>
