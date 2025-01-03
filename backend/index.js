@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+dotenv.config(); // Loads environment variables from the .env file
+console.log('MongoDB URL:', process.env.MONGODB_URL);
+
 import express from "express";
 import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
@@ -6,8 +10,6 @@ import cors from "cors";
 
 
 const app = express();
-
-
 
 
 //allows the app to send and recieve data in json format
