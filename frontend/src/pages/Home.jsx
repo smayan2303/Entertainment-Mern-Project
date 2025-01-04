@@ -66,7 +66,7 @@ const Home = () => {
       </div>
       {loading ? (
         <div className="flex justify-center items-center">
-          <h1>Initializing Backend</h1>
+          <h1>Initializing Backend, Please Wait Up to 30 Seconds</h1>
           <Spinner />
         </div>
       ) : showType === "table" ? (
@@ -77,8 +77,8 @@ const Home = () => {
       {failed && (
         <div className="text-center text-red-500">
           <h1>
-            The database is still loading or is currently unoperational. Please
-            wait up to 30 seconds and Refresh the page. 
+            The database is currently unoperational. Please
+            refresh and try again later. 
           </h1>
         </div>
       )}
