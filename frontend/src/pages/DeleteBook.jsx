@@ -15,39 +15,45 @@ const DeleteBook = () => {
   const handleDeletion = () => {
     setLoading(true);
     axios
-    .delete(`${backendUrl}/books/${id}`)
-    .then(() => {
-      setLoading(false);
-      enqueueSnackbar('Book Deleted Successfully', {variant: 'success'});
-      navigate('/');
-    })
-    .catch((error) => {
-      setLoading(false);
-      //alert("An error occurred. check console for more information.");
-      enqueueSnackbar('Error Deleting Book', {variant: 'error'});
-      console.log(error);
-    });
+      .delete(`${backendUrl}/books/${id}`)
+      .then(() => {
+        setLoading(false);
+        enqueueSnackbar('Book Deleted Successfully', { variant: 'success' });
+        navigate('/');
+      })
+      .catch((error) => {
+        setLoading(false);
+        enqueueSnackbar('Error Deleting Book', { variant: 'error' });
+        console.log(error);
+      });
   };
 
   return (
-    <div className='p-4'>
-      <BackButton />
-      <h1 className='text-3xl my-4 text-center'>Delete Item</h1>
-      {loading ? <div className='flex justify-center items-center'><Spinner /></div> : ''}
-
-      <div className='flex flex-col items-center border-2 border-sky-400 rounded-xl w-[600px] p-8 mx-auto'>
-        <h3 className='text-2xl'>Are You Sure You want to delete this Item?</h3>
-
-        <button
-          className='p-4 bg-red-600 text-white m-8 w-full'
-          onClick={handleDeletion}
-        >
-          Yes, Delete it
-        </button>
+    <div className="bg-gray-900 text-gray-100 min-h-screen">
+      <div className="p-6 max-w-4xl mx-auto">
+        <BackButton />
+        <div className="flex justify-center items-center gap-4 my-8">
+          <h1 className="text-3xl font-bold">Delete Item</h1>
+        </div>
+        {loading ? (
+          <div className="flex flex-col justify-center items-center gap-4">
+            <h1 className="text-lg font-medium">Deleting the item...</h1>
+            <Spinner />
+          </div>
+        ) : (
+          <div className="flex flex-col items-center border-2 border-red-600 rounded-xl p-8 bg-gray-800 mx-auto my-6">
+            <h3 className="text-2xl text-center text-gray-100">Are You Sure You Want to Delete This Item?</h3>
+            <button
+              className="p-4 bg-red-600 text-white rounded-lg w-full hover:bg-red-700 transition duration-300 mt-6"
+              onClick={handleDeletion}
+            >
+              Yes, Delete it
+            </button>
+          </div>
+        )}
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default DeleteBook
+export default DeleteBook;
