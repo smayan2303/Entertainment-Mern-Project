@@ -66,9 +66,14 @@ const Home = () => {
             <img src={logo} alt="Logo" className="w-25 h-24 rounded-lg" />
             <h1 className="text-3xl font-bold">ShowCase: A Movie & TV Show Watch List</h1>
           </div>
-          <Link to="/books/create">
-            <MdOutlineAddBox className="text-gray-100 text-4xl hover:text-gray-400 transition duration-300" />
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link to="/books/create">
+              <span className="text-2xl font-semibold text-gray-100 hover:text-gray-400 transition duration-300">Create Item:</span>
+            </Link>
+            <Link to="/books/create">
+              <MdOutlineAddBox className="text-gray-100 text-4xl hover:text-gray-400 transition duration-300" />
+            </Link>
+          </div>
         </div>
         {loading ? (
           <div className="flex flex-col justify-center items-center gap-4">
